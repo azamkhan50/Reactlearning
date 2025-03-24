@@ -14,6 +14,10 @@ import CollegeName from './CollegeName'
 import UpdateName from './NameChange'
 import NewUser from './Defaultuser'
 import Wrapper from './Wrapper'
+import Getinput from './GetInput'
+import UserFromController from './FromController'
+
+
 
 
 
@@ -25,8 +29,10 @@ function App() {
 
 
     <div>
+      <UserFromController/>
 
-<Wrapper color='blue' margin='20px' border='2px solid blue'><h2>Hello world</h2></Wrapper>
+{/* <Getinput/> */}
+{/* <Wrapper color='blue' margin='20px' border='2px solid blue'><h2>Hello world</h2></Wrapper>
 <Wrapper><h2>User Login</h2></Wrapper>
 <Wrapper><h2>Admin Login</h2>
 <h2 style={{color:'blue'}}> Login</h2>
@@ -37,7 +43,7 @@ function App() {
     <NewUser name= 'azam'/>
     <NewUser name= 'khan'/>
     <NewUser />
-    <NewUser />
+    <NewUser /> */}
 
     </div>
   )
