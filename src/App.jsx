@@ -12,124 +12,32 @@ import Multipcond from './MultipCondtion'
 import User from './User'
 import CollegeName from './CollegeName'
 import UpdateName from './NameChange'
+import NewUser from './Defaultuser'
+import Wrapper from './Wrapper'
 
 
 
-// first components 
-//
-// use jsx syntax extesnion js you js file to write html code help jsx
+
 function App() {
-  const [display, setdispaly]=useState(true)
-  const userName = 'azam';
-  let x = 8;
-  let y = 8;
-  let userimg = 'https://i.imgur.com/lICfvbD.jpg';
-  // this is map data
-  const userdata1 = {
-    name: 'ali',
-    age: 23,
-    email: 'ali@gmail.com'
-
-  }
-  const userdata2 = {
-    name: 'azam',
-    age: 27,
-    email: 'azam@gmail.com'
-
-  }
-  const userdata3 = {
-    name: 'khan',
-    age: 26,
-    email: 'khan@gmail.com'
-
-  }
-
-  // this is array data
-  const userarr = ['ali', 78, 'testgamil.com']
-  // use var value 
-  // array function
-  // const fruite=(name)=>{
-  //   alert(name)
-
-  // }
-  // use state to change ui data valauue
-  const [fruitname, newfruit] = useState('apple')
-
-  const change = () => {
-    newfruit('banan')
-  }
-  //array
-  let collegename=['fuusat','khi','uob','ku']
-  //stat
-  const [username, setusername]=useState('ali')
+ 
   return (
    
 
+
     <div>
-      {/* to check if usrname is empyt not show
-     {username &&  <UpdateName name={username}/>} */}
-     <UpdateName name={username}/>
-      <button onClick={()=>{setusername('asif')}}>Update name</button>
-      <h1>Show array College Name</h1>
-      <CollegeName name={collegename[0]}/>
-      <CollegeName name={collegename[1]}/>
-      <CollegeName name={collegename[2]}/>
-    <h1>This is use props reactjs  </h1>
-      {/* <User name="azam" age={23} email='test@gmail.com' /> */}
-     {User && <User data={userdata1} />}
-      <User data={userdata2} />
-      <User data={userdata2} />
-      
-       {/* <Multipcond/>
-       <button onClick={()=>{setdispaly(!display)}}>Toggle</button>
-     <h3>{display?'khan':null}</h3>
 
-     {
-      display?<UserToggle/>:null
-     }
-    
+<Wrapper color='blue' margin='20px' border='2px solid blue'><h2>Hello world</h2></Wrapper>
+<Wrapper><h2>User Login</h2></Wrapper>
+<Wrapper><h2>Admin Login</h2>
+<h2 style={{color:'blue'}}> Login</h2>
+</Wrapper>
+<Wrapper><h2 style={{color:'yellow'}}> Login</h2></Wrapper>
 
-      <Counter/>
-
-    
-      <h1>{fruitname}</h1>
-      <button onClick={change}>change name</button>
-      <br />
-      <br /> */}
-      
-      {/* <button onClick={done}>submit</button>
-
-      <button onClick={() => fruite('apple')}>apple</button>
-
-      <button onClick={() => fruite('banna')}>banna</button>
-      <h3>{userName ? userName : 'user not found'}</h3>
-      <h3>{userdata.name}</h3>
-      <h3>{userdata.age}</h3>
-      <h3>{userdata.email}</h3>
-      <h3>{userarr[2]}</h3>
-      <input type="text" value={userName} id={userName} />
-      <h2>{sum(4, 5)}</h2>
-      <h1>{operation(4, 5, "+")}</h1>
-      <h1>{operation(4, 5, "-")}</h1>
-      <h1>{operation(4, 5, "*")}</h1>
-      <h1>{operation(4, 5, "")}</h1> */}
-
-
-      {/* <Name/> */}
-
-      {/* <img src={userimg} alt="ali" /> */}
-      {/* <h3>{50+50}</h3>
-<h5>{x*y}</h5>
-
-<button onClick={()=>alert('Hello')}>Click me</button>
-     <Login/> 
-     <Profile/>
-     <Setting/> */}
-      {/* <h4>{UserKey}</h4> */}
-      {/* <h1>Frist Compenets </h1>
-    <Fruit></Fruit>
-    <Color/>
-    <Sum></Sum> */}
+      <h1> To work default props </h1>
+    <NewUser name= 'azam'/>
+    <NewUser name= 'khan'/>
+    <NewUser />
+    <NewUser />
 
     </div>
   )
