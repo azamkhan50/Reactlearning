@@ -16,6 +16,12 @@ import NewUser from './Defaultuser'
 import Wrapper from './Wrapper'
 import Getinput from './GetInput'
 import UserFromController from './FromController'
+import Skills from './Skills'
+import RadioDropDown from './RadioDropDownComp'
+import ArrayLoppCompt from './ArrayLoop'
+import Userdata from './UserData'
+import TaskColck from './ClockTask'
+
 
 
 
@@ -23,13 +29,115 @@ import UserFromController from './FromController'
 
 
 function App() {
- 
+  const userData = [
+    {
+        id: 1,
+        name: 'ali',
+        email: 'ali@gmail.com'
+    },
+    {
+        id: 2,
+        name: 'khan',
+        email: 'khan@gmail.com'
+    },
+    {
+        id: 3,
+        name: 'azam',
+        email: 'azam@gmail.com'
+    },
+    {
+        id: 4,
+        name: 'kazim',
+        email: 'kazim@gmail.com'
+    },
+    {
+        id: 5,
+        name: 'alyail',
+        email: 'alyail@gmail.com'
+    },
+    {
+        id: 6,
+        name: 'usman',
+        email: 'usman@gmail.com'
+    },
+    {
+        id: 7,
+        name: 'hamza',
+        email: 'hamza@gmail.com'
+    },
+    {
+        id: 8,
+        name: 'bilal',
+        email: 'bilal@gmail.com'
+    },
+    {
+        id: 9,
+        name: 'farhan',
+        email: 'farhan@gmail.com'
+    },
+    {
+        id: 10,
+        name: 'zain',
+        email: 'zain@gmail.com'
+    },
+    {
+        id: 11,
+        name: 'rehman',
+        email: 'rehman@gmail.com'
+    },
+    {
+        id: 12,
+        name: 'hassan',
+        email: 'hassan@gmail.com'
+    },
+    {
+        id: 13,
+        name: 'jawad',
+        email: 'jawad@gmail.com'
+    },
+    {
+        id: 14,
+        name: 'tariq',
+        email: 'tariq@gmail.com'
+    },
+    {
+        id: 15,
+        name: 'danish',
+        email: 'danish@gmail.com'
+    }
+];
+const [color, setcolor]=useState('yellow')
   return (
    
 
 
     <div>
-      <UserFromController/>
+      <h2>Use props clock task1 to change color selct change color color</h2>
+        <select onChange={(event)=>{setcolor(event.target.value)}} defaultChecked='yellow'>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+      <TaskColck color={color}/>
+      <h2>Rescuued code</h2>
+{
+userData.map((user)=>(
+<div key={user.id}>
+<Userdata  data={user}/>
+</div>
+))
+
+  
+}
+   
+<ArrayLoppCompt></ArrayLoppCompt>
+
+      <RadioDropDown/>
+      <br /><br /><br />
+    <h1>React js Checkbox work</h1>
+    <Skills/>
+
+      {/* <UserFromController/> */}
 
 {/* <Getinput/> */}
 {/* <Wrapper color='blue' margin='20px' border='2px solid blue'><h2>Hello world</h2></Wrapper>
