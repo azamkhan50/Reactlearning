@@ -1,0 +1,21 @@
+.heading{
+     color: green;
+}
+.image-style{
+    width: 200px;
+}
+.card-style{
+    margin: 10px;
+    width: 200px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 3px 1px #ddd;
+}
+.wrap-text{
+    padding: 10px;
+}
+.text-color{
+    color: green;
+}
+.container{
+    display: flex;
+}
