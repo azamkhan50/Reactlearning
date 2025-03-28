@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -28,252 +28,80 @@ import InternalCss from './InternalCss'
 import UserProifle from './UserProfile'
 import StyledComp from './StyledCompent'
 import BoostrapCompent from './BoostrapReact'
+import UnControllerCompent from './UncontrolleComp'
 
-
+import ForwardRefComp from './FowardRef'
+import UseFromStatus from './UseFormstatus'
+import UseTransctionHook from './UseTransactionHook'
+import DrivedStateComp from './DrivedState'
 
 
 
 
 
 function App() {
-  //   const collegedata = [
-  //     {
-  //         name: 'ku',
-  //         city: 'gilgit',
-  //         website: 'www.ku.com',
-  //         student: [
-  //             {
-  //                 name: 'ali',
-  //                 stdemail: 'ali@gmail.com',
-  //                 address: 'khi'
-  //             },
-  //             {
-  //                 name: 'khan',
-  //                 stdemail: 'khan@gmail.com',
-  //                 address: 'skd'
-  //             },
-  //             {
-  //                 name: 'raj',
-  //                 stdemail: 'raj@gmail.com',
-  //                 address: 'lhr'
-  //             }
-  //         ]
-  //     },
-  //     {
-  //         name: 'pu',
-  //         city: 'lahore',
-  //         website: 'www.pu.com',
-  //         student: [
-  //             {
-  //                 name: 'hassan',
-  //                 stdemail: 'hassan@gmail.com',
-  //                 address: 'isb'
-  //             },
-  //             {
-  //                 name: 'usman',
-  //                 stdemail: 'usman@gmail.com',
-  //                 address: 'pwr'
-  //             },
-  //             {
-  //                 name: 'zain',
-  //                 stdemail: 'zain@gmail.com',
-  //                 address: 'lhr'
-  //             }
-  //         ]
-  //     },
-  //     {
-  //         name: 'qu',
-  //         city: 'quetta',
-  //         website: 'www.qu.com',
-  //         student: [
-  //             {
-  //                 name: 'danish',
-  //                 stdemail: 'danish@gmail.com',
-  //                 address: 'qta'
-  //             },
-  //             {
-  //                 name: 'jawad',
-  //                 stdemail: 'jawad@gmail.com',
-  //                 address: 'rwp'
-  //             },
-  //             {
-  //                 name: 'ahmed',
-  //                 stdemail: 'ahmed@gmail.com',
-  //                 address: 'hyd'
-  //             }
-  //         ]
-  //     },
-  //     {
-  //         name: 'iu',
-  //         city: 'islamabad',
-  //         website: 'www.iu.com',
-  //         student: [
-  //             {
-  //                 name: 'farhan',
-  //                 stdemail: 'farhan@gmail.com',
-  //                 address: 'isb'
-  //             },
-  //             {
-  //                 name: 'bilal',
-  //                 stdemail: 'bilal@gmail.com',
-  //                 address: 'fsd'
-  //             },
-  //             {
-  //                 name: 'rehman',
-  //                 stdemail: 'rehman@gmail.com',
-  //                 address: 'skd'
-  //             }
-  //         ]
-  //     }
-  // ];
-  const [counter, setcounter] = useState(0)
-  const [add, setadd] = useState(0)
-  const [display, setdisplay] = useState(true)
+  // const inputRef=useRef(null)
+  // const h1Ref=useRef(null)
 
-  const [cardStyle, setcardStyleset] = useState({
-    boder: "1px solid #DEDEDBFF",
-    width: "200px",
-    boxShadow: "1px 2px 3px 0px #A59D9D57",
-    margin: "10px"
-  })
-  const updateThem = (bgColor, textColor) => {
-    setcardStyleset({ ...cardStyle, backgroundColor: bgColor })
-    settextColor(textColor)
+  // const handelTextRef=()=>{
+  //   console.log(inputRef)
+  //   inputRef.current.focus();
+  //   inputRef.current.style.color='red';
+  //   inputRef.current.placeholder="enter any";
+  //   inputRef.current.value='53453'
+    
+  // }
+  const inputref=useRef(null);
+
+  const handelInputRef=()=>{
+    console.log(inputref)
+    inputref.current.focus();
+    inputref.current.style.color='red';
+    inputref.current.placeholder="enter any";
+    inputref.current.value='53453'
+    
   }
-  const [textColor, settextColor] = useState('black')
-  const[grid, setGrid]=useState(true)
 
+  
+  // const h1Handler=()=>{
+  //   h1Ref.current.style.color='blue';
+  // }
+  // const togglebtn=()=>{
+  //   if(inputRef.current.style.display !='none'){
+  //     inputRef.current.style.display ='none'
+  //   }else{
+  //     inputRef.current.style.display ='inline'
+  //   }
+  // }
+
+  // function pass to parent class.
+  function display(name){
+    alert(name)
+
+  }
+  function getData(){
+    alert('user data get successfuly;')
+
+  }
   return (
 
 
-
+ 
     <div >
-       {/* Date 26/3/25 */}
-       <BoostrapCompent/>
-       {/* <StyledComp/> */}
-       {/* <div style={{display:'flex', flexWrap:'wrap'}}>
-       <UserProifle/>
-       <UserProifle/>
-       <UserProifle/> 
-       <UserProifle/>
-       <UserProifle/>
-       <UserProifle/> 
-       <UserProifle/>
-       </div> */}
-       
-       {/* <h2 className='heading'>Work Internal css aceess all project</h2>
-       <InternalCss/> */}
-{/*        
-      <button onClick={() => updateThem('gray', 'red')}>grayThem</button>
-      <button onClick={() => updateThem('white', 'black')}>Defultthem</button>
-      <button onClick={() => setGrid(!grid)}>ToggleGrid</button>
-     
-      <div style={{ display:grid?'flex':'block', flexWrap: 'wrap' }}>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} grid={grid} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-        <div style={cardStyle}>
-          <InLineCssCompeontes newcolor={textColor} />
-        </div>
-
-      </div > */}
-
-
-
-
-      {/* <InLineCssCompeontes newcolor={textColor}/>
-<InLineCssCompeontes newcolor={textColor}/> */}
-
-
-
-
-
-
-
-
-
-      {/* {
-  display?<CounterEffect data={counter} add={add} />:null
-}
-
-<button onClick={()=>setcounter(counter+1)}>Counter:{counter}</button>
-<button onClick={()=>setadd(add+1)}>add:{add}</button>
-<button onClick={()=>setdisplay(!display)}>Toggle:{add}</button> */}
-      {/* <h2>Nessted Array</h2>
-      {
-        collegedata.map((data,index)=>(
-          <div key={index}>
-           
-           <College data={data}/>
-           
-          </div>
-          
-        ))
-      } */}
-      {/* <h2>Use props clock task1 to change color selct change color color</h2>
-      <select onChange={(event) => { setcolor(event.target.value) }} defaultChecked='yellow'>
-        <option value="yellow">Yellow</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-      </select>
-      <TaskColck color={color} />
-      <h2>Rescuued code</h2>
-      {
-        userData.map((user) => (
-          <div key={user.id}>
-            <Userdata data={user} />
-          </div>
-        ))
-
-
-      }
-
-      <ArrayLoppCompt></ArrayLoppCompt>
-
-      <RadioDropDown />
-      <br /><br /><br />
-      <h1>React js Checkbox work</h1>
-      <Skills /> */}
-
+      {/* Date 27/3/25 */}
+      <DrivedStateComp/>
+    {/* <UseTransctionHook/> */}
+      {/* <UseFromStatus/> */}
+     {/* <ForwardRefComp ref={inputref}/>
+      <button onClick={handelInputRef}>Clik</button> */}
+      {/* <UnControllerCompent display={display} name='ali'data={getData}/>
+      <UnControllerCompent display={display} name='azam'data={getData}/> */}
+        {/* <h2>work UseRef</h2>
+        <button onClick={togglebtn}>Toggle</button>
+    // <input  ref={inputRef}type="text" placeholder='Enter name' />
+    <button onClick={handelTextRef}>Clik</button>
+    <h1 ref={h1Ref}>Hello world </h1>
+    <button onClick={h1Handler}>click me to change text color</button> */}
 
 
     </div>
