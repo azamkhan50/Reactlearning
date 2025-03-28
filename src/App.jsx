@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { Fragment, useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -34,6 +34,14 @@ import ForwardRefComp from './FowardRef'
 import UseFromStatus from './UseFormstatus'
 import UseTransctionHook from './UseTransactionHook'
 import DrivedStateComp from './DrivedState'
+import AddUser from './Date28-3-25-react/AddUser'
+import DisplayUser from './Date28-3-25-react/DisplayUser'
+import UpdateingObejct from './Date28-3-25-react/UpdatingObjInState'
+import UpdatingArray from './Date28-3-25-react/UpdatingArrayState'
+import LoginComponent from './Date28-3-25-react/UseActionState'
+import UserIdHook from './Date28-3-25-react/UserIdHook'
+import FragmentComp from './Date28-3-25-react/fragment'
+
 
 
 
@@ -49,54 +57,55 @@ function App() {
   //   inputRef.current.style.color='red';
   //   inputRef.current.placeholder="enter any";
   //   inputRef.current.value='53453'
-    
-  // }
-  const inputref=useRef(null);
 
-  const handelInputRef=()=>{
-    console.log(inputref)
-    inputref.current.focus();
-    inputref.current.style.color='red';
-    inputref.current.placeholder="enter any";
-    inputref.current.value='53453'
-    
-  }
-
-  
-  // const h1Handler=()=>{
-  //   h1Ref.current.style.color='blue';
   // }
-  // const togglebtn=()=>{
-  //   if(inputRef.current.style.display !='none'){
-  //     inputRef.current.style.display ='none'
-  //   }else{
-  //     inputRef.current.style.display ='inline'
-  //   }
+  // const inputref=useRef(null);
+
+  // const handelInputRef=()=>{
+  //   console.log(inputref)
+  //   inputref.current.focus();
+  //   inputref.current.style.color='red';
+  //   inputref.current.placeholder="enter any";
+  //   inputref.current.value='53453'
+
   // }
 
-  // function pass to parent class.
-  function display(name){
-    alert(name)
+  // date 28-3-25 start 
+  const [user, setAdduser] = useState('')
 
-  }
-  function getData(){
-    alert('user data get successfuly;')
 
-  }
+  // end
+
+
+
   return (
 
 
- 
+
     <div >
+      {/* Date 28/3/25 */}
+
+
+      <FragmentComp />
+
+      {/* <Fragment/> */}
+      {/* <UserIdHook/>
+           <UserIdHook/>
+           <UserIdHook/> */}
+      {/* // <LoginComponent/> */}
+      {/* <UpdatingArray/> */}
+      {/* <UpdateingObejct/>
+           <AddUser setAdduser={setAdduser}/>
+           <DisplayUser user={user}/> */}
       {/* Date 27/3/25 */}
-      <DrivedStateComp/>
-    {/* <UseTransctionHook/> */}
+      {/* <DrivedStateComp/> */}
+      {/* <UseTransctionHook/> */}
       {/* <UseFromStatus/> */}
-     {/* <ForwardRefComp ref={inputref}/>
+      {/* <ForwardRefComp ref={inputref}/>
       <button onClick={handelInputRef}>Clik</button> */}
       {/* <UnControllerCompent display={display} name='ali'data={getData}/>
       <UnControllerCompent display={display} name='azam'data={getData}/> */}
-        {/* <h2>work UseRef</h2>
+      {/* <h2>work UseRef</h2>
         <button onClick={togglebtn}>Toggle</button>
     // <input  ref={inputRef}type="text" placeholder='Enter name' />
     <button onClick={handelTextRef}>Clik</button>
