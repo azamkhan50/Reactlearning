@@ -1,7 +1,10 @@
-export default function College(){
+import ClassComp from "./ClassComponents";
+
+ export default function CollegeComp(){
     return(
-        <div style={{backgroundColor:'yellow'}}>
-            <h1>College Compoentes</h1>
+        <div style={{backgroundColor:'orange', padding:'10px'}}>
+            <h3>College Compenents </h3>
+            <ClassComp/>
         </div>
     )
 }
