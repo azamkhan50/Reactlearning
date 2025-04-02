@@ -1,0 +1,60 @@
+.header {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between; /* Ensures space between logo and nav items */
+    align-items: center; /* Vertically center items */
+    background-color: #e1caca;
+    padding: 10px;
+    margin: 0 auto; /* Centers the navbar horizontally */
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.header ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    padding: 0;
+    width: 500px;
+    margin: auto;
+}
+
+.header ul li {
+    padding: 10px;
+}
+
+.header .link h2 {
+    margin: 0;
+}
+
+.header .link a { /* Fix text styling */
+    text-decoration: none;
+    font-size: 20px;
+    color: black; /* Adjust text color */
+}
+
+/* Optional: Reduce `h1` size inside the navbar for better styling */
+.header ul li a h1 {
+    font-size: 18px;
+    margin: 0;
+    text-decoration: none;
+   
+}
+
+.college .link{
+   
+    text-decoration: none;
+    margin: 10px;
+    font-size: 20px;
+}
+.active{
+    font-weight: 1000px;
+    color: red;
+}
+.custom-active{
+    font-weight: 900;
+    color: blue;
+}
