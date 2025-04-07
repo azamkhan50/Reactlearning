@@ -1,67 +1,65 @@
 
-import { BrowserRouter, Link, Navigate, Route, Routes } from 'react-router'
-import HomePage from './Date29-3-25-reactTopic/HomePage'
-import AboutPage from './Date29-3-25-reactTopic/AboutPage'
-import NavBar from './Date29-3-25-reactTopic/NavBar'
-import LoginPage from './Date29-3-25-reactTopic/LoginPage'
-import PageNotFound from './Date29-3-25-reactTopic/PageNotFound'
-import University from './Date29-3-25-reactTopic/University'
-import Student from './Date29-3-25-reactTopic/Student'
-import Daperment from './Date29-3-25-reactTopic/Daperment'
-import Staff from './Date29-3-25-reactTopic/Staff'
-import UsersPage from './Date29-3-25-reactTopic/Users'
-import UsersDetailsPage from './Date29-3-25-reactTopic/UserDetails'
+import { Link, Route, Routes } from 'react-router'
+import AddUsers from './APISectionReact/AddUser'
+import GetUsersData from './APISectionReact/GetUsersData'
+import EidtUser from './APISectionReact/EditUser'
+import UserForm from './APISectionReact/UserForm'
+import UserLogin from './APISectionReact/UserLogin'
+//  import LazyLoading from './APISectionReact/LazyLoading'
+import { lazy, Suspense, useState } from 'react'
+import RestApi from './APISectionReact/RestApi'
+import ColorProject from './APISectionReact/ProjectColor'
+const LazyLoading= lazy(()=>import('./APISectionReact/LazyLoading'))
 
 function App() {
-  // const [sub,setSub]= useState('')
-  // const [value,setToggle]=useToggle(true);
-  // const [data,setdata]=useToggle(true);
-  // console.log(value);
 
+  const [load, setLoad] = useState(false)
   return (
-    // 29-3-25 reacttopic use router start
-    //   <BrowserRouter>
-    //   <>
-    //     <Link to="/">Home</Link>
-    //     <Link to="/about">About</Link>
-    //     <h2>Router</h2>
-    //     <Routes>
-    //       <Route path="/" element={<HomePage />} />
-    //       <Route path="/about" element={<AboutPage />} />
-    //     </Routes>
-    //   </>
-    // </BrowserRouter>
+
     <>
+
       {/* <NavBar/> */}
+      {/* Date 1/4/25 api with route start  */}
+      {/* <GetUsersData/> */}
 
-
+      {/* end */}
+     {/* <h1>lazy loading use</h1>
+     
+      {
+        load ?  <Suspense fallback={<h4>loading.....</h4>}><LazyLoading /></Suspense>  : null
+      }
+      <button onClick={() => setLoad(true)}>  load user</button> */}
+     
+       
+      <ul style={{
+        display: 'flex', justifyContent: 'space-around',
+        width: '400px;'
+      }}>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/add">Add user</Link>
+        </li>
+        <li>
+          <Link to="/login">Login user</Link>
+        </li>
+        <li>
+          <Link to="/userlist">UserList</Link>
+        </li>
+        <li>
+          <Link to="/project">Project</Link>
+        </li>
+      </ul>
       <Routes>
-        <Route element={<NavBar />}>
-          <Route path='/' element={<HomePage />} />
-          {/* use prefix  */}
-          <Route path='pak'>
-            <Route path='/pak/user'>
-            <Route path='/pak/user/about' element={<AboutPage />} />
-            <Route path='/pak/user/login' element={<LoginPage />} />
-            </Route>
-          
-          </Route>
-         {/* use ? option ? id/name?  */}
-          <Route path='/users/list?' element={<UsersPage />} />
-          <Route path='/users/:id/:name?' element={<UsersDetailsPage  />} />
-
-        </Route>
-
-
-        <Route path='/uni' element={<University />} >
-          <Route index element={<Student />} />
-          <Route path='daper' element={<Daperment />} />
-          <Route path='staff' element={<Staff />} />
-        </Route>
-        <Route path='/*' element={<PageNotFound />} />
-        {/* to redirect to any page you want * */}
-        {/* <Route path='/*' element={<Navigate to={'/'}/>} /> */}
+        <Route path='/' element={<GetUsersData />} />
+        <Route path='/add' element={<AddUsers />} />
+        <Route path="/edit/:id" element={<EidtUser />} />
+        <Route path='/login' element={<UserLogin />} />
+        <Route path='/userlist' element={ <RestApi/>} />
+        <Route path='/project' element={ <ColorProject/>} />
       </Routes>
+
     </>
     // End
     //Start//
