@@ -9,6 +9,7 @@ import UserLogin from './APISectionReact/UserLogin'
 import { lazy, Suspense, useState } from 'react'
 import RestApi from './APISectionReact/RestApi'
 import ColorProject from './APISectionReact/ProjectColor'
+import Home from './Pages/Home'
 const LazyLoading= lazy(()=>import('./APISectionReact/LazyLoading'))
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
   return (
 
     <>
+    <Home/>
 
       {/* <NavBar/> */}
       {/* Date 1/4/25 api with route start  */}
@@ -30,7 +32,7 @@ function App() {
       }
       <button onClick={() => setLoad(true)}>  load user</button> */}
      
-       
+{/*        
       <ul style={{
         display: 'flex', justifyContent: 'space-around',
         width: '400px;'
@@ -58,7 +60,7 @@ function App() {
         <Route path='/login' element={<UserLogin />} />
         <Route path='/userlist' element={ <RestApi/>} />
         <Route path='/project' element={ <ColorProject/>} />
-      </Routes>
+      </Routes> */}
 
     </>
     // End
